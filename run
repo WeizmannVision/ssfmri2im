@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+ipython KamitaniData/kamitani_image_prepare.py
+ipython encoder_kamitani.py
+ipython encdec_kamitani.py

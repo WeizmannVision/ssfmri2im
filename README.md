@@ -45,8 +45,8 @@ https://github.com/KamitaniLab/GenericObjectDecoding
    - Train an Encoder model and save it's weights
    - Train the full model and save the reconstructed images
 
-example output:
-<img src="./collage.jpeg" width="500" height="500">
+example output: \
+<img src="./collage.jpeg" width="250" height="250">
 
 
 

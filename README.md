@@ -3,10 +3,10 @@ Code for NeurIPS 2019 paper "From voxels to pixels and back: Self-supervision in
 
 
 Paper: https://arxiv.org/abs/1907.02431
-
 Project page: http://www.wisdom.weizmann.ac.il/~vision/ssfmri2im/
+video:
 
-video: [![ssfmri2im](http://img.youtube.com/vi/h2JhDAdaa-Q/0.jpg)](http://www.youtube.com/watch?v=h2JhDAdaa-Q "Self-supervision in natural-image reconstruction from fMRI")
+ [![ssfmri2im](http://img.youtube.com/vi/h2JhDAdaa-Q/0.jpg)](http://www.youtube.com/watch?v=h2JhDAdaa-Q "Self-supervision in natural-image reconstruction from fMRI")
 
 
 ----------

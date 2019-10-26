@@ -3,7 +3,7 @@ Code for NeurIPS 2019 paper "From voxels to pixels and back: Self-supervision in
 
 
 Paper: https://arxiv.org/abs/1907.02431
-Project page: http://www.wisdom.weizmann.ac.il/~vision/ssfmri2im/
+Project page: http://www.wisdom.weizmann.ac.il/~vision/ssfmri2im/  
 video: [![ssfmri2im](http://img.youtube.com/vi/h2JhDAdaa-Q/0.jpg)](http://www.youtube.com/watch?v=h2JhDAdaa-Q "Self-supervision in natural-image reconstruction from fMRI")
 
 
@@ -19,7 +19,7 @@ If you find our work useful in your research or publication, please cite our wor
 }
 ```
 ----------
-#Basic usage:
+##Basic usage:
 1. Download "Generic Object Decoding" dataset (by Kamitani Lab)
 ```
 http://brainliner.jp/data/brainliner/Generic_Object_Decoding
@@ -34,7 +34,7 @@ more instructions here:
 ```
 https://github.com/KamitaniLab/GenericObjectDecoding
 ```
-3. Change Paths in config_file.py to match your file locations,Specifically:
+3. Change Paths in config_file.py to match your file locations, specifically:
    - imagenet_wind_dir - point to the Imagenet image directory
    - external_images_dir - external iamges to be used in training, we use the Imagenet(2011) validation images
    - kamitani_data_mat - mat file containing the fMRI activations

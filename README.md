@@ -20,7 +20,7 @@ If you find our work useful in your research or publication, please cite our wor
 }
 ```
 ----------
-##Basic usage:
+# Basic usage:
 1. Download "Generic Object Decoding" dataset (by Kamitani Lab)
 ```
 http://brainliner.jp/data/brainliner/Generic_Object_Decoding
@@ -46,7 +46,7 @@ https://github.com/KamitaniLab/GenericObjectDecoding
    - Train the full model and save the reconstructed images
 
 example output:
-![sketch](/collage.jpeg =500x500 )
+![sketch](/collage.jpeg){:height="50%" width="50%"}
 
 
 

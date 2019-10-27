@@ -93,6 +93,7 @@ encoder_model = encoder(enc_param)
 decoder_model = decoder(dec_param)
 
 encoder_model.trainable = False
+print(encoder_weights)
 encoder_model.load_weights(encoder_weights )
 
 model = encdec(NUM_VOXELS,RESOLUTION,encoder_model,decoder_model)

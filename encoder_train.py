@@ -15,7 +15,7 @@ from KamitaniData.kamitani_data_handler import kamitani_data_handler as data_han
 from Models.models import *
 import config_file
 
-if (os.path.exists(config_file.encoder_weights) and ~config_file.retrain_encoder):
+if (os.path.exists(config_file.encoder_weights) and not config_file.retrain_encoder):
     print('pretrained encoder weights file exist')
     sys.exit()
 else:
@@ -85,7 +85,7 @@ print(vision_model.summary())
 callbacks = []
 
 if(config_file.encoder_tenosrboard_logs is not None):
-    log_path = config_file.encoder_tenosr_board_logs
+    log_path = config_file.encoder_tenosrboard_logs
     tb_callback = TensorBoard(log_path)
     tb_callback.set_model(vision_model)
     callbacks.append(tb_callback)

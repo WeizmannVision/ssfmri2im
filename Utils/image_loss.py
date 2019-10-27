@@ -97,8 +97,6 @@ class image_loss():
 
 
 
-
-
 def total_variation_loss(x):
     a = K.square(x[:, :-1, :-1, :] - x[:, 1:, : - 1, :])
     b = K.square(x[:, :-1, :-1, :] - x[:, : - 1, 1:, :])

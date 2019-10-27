@@ -14,6 +14,9 @@ def image_prepare(img,size,interpolation = 'cubic'):
 
     :param img: image
     :param size: image output size
+    :param interpolation: interpolation used in resize
+
+    :return resized and croped image
 
     """
     out_img = np.zeros([size,size,3])
@@ -39,6 +42,14 @@ def image_prepare(img,size,interpolation = 'cubic'):
 
 
 def rand_shift(img,max_shift = 0 ):
+    """
+    randomly shifted image
+
+    :param img: image
+    :param max_shift: image output size
+
+    :return randomly shifted image
+    """
     x_shift, y_shift = np.random.randint(-max_shift, max_shift + 1, size=2)
     img_shifted = shift(img, [x_shift, y_shift, 0], prefilter=False, order=0, mode='nearest')
     return img_shifted
@@ -46,6 +57,17 @@ def rand_shift(img,max_shift = 0 ):
 
 
 def image_collage(img_arrays, rows =10, border =5,save_file = None):
+    """
+    create image collage for arrays of images
+
+    :param img_arrays: list of image arrays
+    :param rows: number of rows in resulting iamge collage
+    :param border: border between images
+    :param save_file: location for resulting image
+
+    :return image collage
+    """
+
     img_len =img_arrays[0].shape[2]
     array_len  = img_arrays[0].shape[0]
     num_arrays =len(img_arrays)

@@ -9,6 +9,15 @@ import config_file
 
 class batch_generator_dec(Sequence):
 
+    """
+    Generates batches for decoder model
+
+    :param X: images
+    :param Y: fMRI activations
+    (X,Y correspond )
+    :param batch_size: batch_size
+    """
+
     def __init__(self,  X, Y, batch_size =32):
         self.indexes = {}
         self.batch_size = batch_size
@@ -29,6 +38,16 @@ class batch_generator_dec(Sequence):
 
 
 class batch_generator_enc(batch_generator_dec):
+    """
+    Generates batches for encoder model
+
+    :param X: images
+    :param Y: fMRI activations
+    (X,Y correspond )
+    :param batch_size: batch_size
+    :param max_shift: max random shift applied on images
+    """
+
     def __init__(self, X, Y, batch_size=32,max_shift = 5):
         super().__init__(X, Y, batch_size)
         self.max_shift = max_shift
@@ -44,7 +63,11 @@ class batch_generator_enc(batch_generator_dec):
 
 class batch_generator_external_images(Sequence):
     """
-    Gets images from an image directory
+    Generates batches of images from a directory
+
+    :param img_size: image should be resized to size
+    :param batch_size: batch size
+    :param ext_dir: directory containing images
     """
     def __init__(self, img_size = 112, batch_size=16,ext_dir = config_file.external_images_dir):
         self.img_size = img_size
@@ -71,9 +94,12 @@ class batch_generator_external_images(Sequence):
 
 class batch_generator_test_fmri(Sequence):
     """
-    Generates test fMRI samples
-    inputs:
-        frac - fraction of test fmri to average (3 -> 1/3)
+    Generates test fMRI samples with random averaging
+    :param Y: fMRI samples
+    :param labels: Y labels
+    :param batch_size: batch_size
+    :param frac: specify the random fraction of test fmri to average on (3 -> 1/3)
+    :param ignore_labels: labels to be omitted from batches
     """
     def __init__(self,Y,labels, batch_size=32, frac =3,ignore_labels = None):
         self.Y = Y
@@ -106,6 +132,21 @@ class batch_generator_test_fmri(Sequence):
 
 
 class batch_generator_encdec(Sequence):
+    """
+    Generates batches from encoder-deocder model
+    :param X: train images
+    :param Y: fMRI train samples
+    (X,Y correspond )
+    :param Y_test: fMRI test samples
+    :param test_labels: Y_test labels
+    :param batch_size: batch_size
+    :param max_shift_enc: max random shift applied on images given to encoder
+    :param frac_test: specify the random fraction of test fmri to average on (3 -> 1/3)
+    :param ext_dir: directory containing images that are not part of the dataset
+    :param ignore_test_fmri_labels: test labels to be omitted from batches
+    """
+
+
     def __init__(self, X, Y, Y_test, test_labels, batch_paired = 48, batch_unpaired = 16, max_shift_enc = 5, img_len = 112
                  , frac_test = 3,ext_dir = config_file.external_images_dir,ignore_test_fmri_labels = None):
         self.num_samples = Y.shape[0]

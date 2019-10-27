@@ -1,4 +1,3 @@
-
 from keras.utils import Sequence
 import numpy as np
 import os
@@ -71,7 +70,6 @@ class batch_generator_external_images(Sequence):
 
 
 class batch_generator_test_fmri(Sequence):
-
     """
     Generates test fMRI samples
     inputs:
@@ -103,19 +101,13 @@ class batch_generator_test_fmri(Sequence):
         rand_ind = np.random.choice(frac, indexes.shape)
         while (np.sum(rand_ind) == 0 ):
             rand_ind = np.random.choice(frac, indexes.shape)
-        return indexes[rand_ind == 0]#rand_ind
-
-
-
-
-
-
+        return indexes[rand_ind == 0]
 
 
 
 class batch_generator_encdec(Sequence):
     def __init__(self, X, Y, Y_test, test_labels, batch_paired = 48, batch_unpaired = 16, max_shift_enc = 5, img_len = 112
-                 , frac_test = 3,ext_dir = '/home/romanb/data/image_net/images224/val',ignore_test_fmri_labels = None):
+                 , frac_test = 3,ext_dir = config_file.external_images_dir,ignore_test_fmri_labels = None):
         self.num_samples = Y.shape[0]
         self.batch_size     = batch_paired+batch_unpaired
         self.gen_dec        = batch_generator_dec(X, Y, batch_size=batch_paired)
@@ -131,8 +123,6 @@ class batch_generator_encdec(Sequence):
 
     def __len__(self):
         'Denotes the number of batches per epoch'
-        #return self.gen_dec.__len__()
-
         return max(int(self.num_samples // self.batch_size), 1)
 
     def __getitem__(self,batch_num):

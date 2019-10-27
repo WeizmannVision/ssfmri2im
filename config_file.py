@@ -1,20 +1,21 @@
 
-GPU_ID = "1"
+import os
+GPU_ID = "0"
 
 #####################  PATHS  ######################################
-imagenet_dir = '/home/romanb/data/image_net/'
-imagenet_wind_dir = imagenet_dir+'wind/'
-external_images_dir =  imagenet_dir+'/images224/val/'
+imagenet_dir = "/home/romanb/data/image_net/"
+imagenet_wind_dir = os.path.join(imagenet_dir,"wind/")
+external_images_dir =  os.path.join(imagenet_dir,"images224/val/")
 
-project_dir = '/home/romanb/data/ssfmri2im/'
-images_npz = project_dir+'data/images_112.npz'
+project_dir = "/home/romanb/data/ssfmri2im/"
+images_npz = os.path.join(project_dir,"data/images_112.npz")
 kamitani_data_format = True
-kamitani_data_mat = project_dir+'data/Subject3.mat'
-caffenet_models_weights = project_dir+'models/imagenet-caffe-ref.mat'
-results  = project_dir+'results/'
+kamitani_data_mat = os.path.join(project_dir,"data/Subject3.mat")
+caffenet_models_weights = os.path.join(project_dir,"models/imagenet-caffe-ref.mat")
+results  = os.path.join(project_dir,"results/")
 
 
-encoder_weights = project_dir+'/models/encoder.hdf5'
+encoder_weights = os.path.join(project_dir,"models/encoder.hdf5")
 retrain_encoder = False
 decoder_weights = None
 

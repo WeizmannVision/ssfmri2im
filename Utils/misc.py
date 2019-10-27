@@ -17,8 +17,6 @@ def calc_snr(y, y_avg, labels):
 
 
 
-
-
 def corr_percintiles(y,y_pred, per = [50,75,90]):
     num_voxels = y.shape[1]
     corr = np.zeros([num_voxels])
@@ -49,7 +47,6 @@ class log_image_collage_callback(keras.callbacks.Callback):
 
 
             imsave(self.dir+'ep_'+str(epoch)+'.jpg',collage)
-
 
 
 

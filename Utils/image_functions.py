@@ -16,8 +16,6 @@ def image_prepare(img,size,interpolation = 'cubic'):
     :param size: image output size
 
     """
-
-
     out_img = np.zeros([size,size,3])
     s = img.shape
     r = s[0]
@@ -39,11 +37,11 @@ def image_prepare(img,size,interpolation = 'cubic'):
     return out_img/255.0
 
 
+
 def rand_shift(img,max_shift = 0 ):
     x_shift, y_shift = np.random.randint(-max_shift, max_shift + 1, size=2)
     img_shifted = shift(img, [x_shift, y_shift, 0], prefilter=False, order=0, mode='nearest')
     return img_shifted
-
 
 
 
@@ -66,6 +64,8 @@ def image_collage(img_arrays, rows =10, border =5,save_file = None):
         imsave(save_file,img_collage)
 
     return img_collage
+
+
 
 def save_images(images,images_orig = None ,folder=''):
     if not os.path.exists(folder):

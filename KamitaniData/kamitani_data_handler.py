@@ -5,17 +5,14 @@ import pandas as pd
 import sklearn.preprocessing
 from sklearn import preprocessing
 
-dir ='/net/mraid11/export/data/romanb/GenericObjectDecoding/data/'
-test_im = pd.read_csv('/net/mraid11/export/data/romanb/GenericObjectDecoding/data/images/imageID_test.csv', header=None)
-train_im = pd.read_csv('/net/mraid11/export/data/romanb/GenericObjectDecoding/data/images/imageID_training.csv',
-                       header=None)
+
 class kamitani_data_handler():
     """Generate batches for FMRI prediction
     frames_back - how many video frames to take before FMRI frame
     frames_forward - how many video frames to take after FMRI frame
     """
 
-    def __init__(self, matlab_file = dir+'Subject3.mat',test_img_csv = dir+'images/imageID_test.csv',train_img_csv = dir+'images/imageID_training.csv',voxel_spacing =3,log = 0 ):
+    def __init__(self, matlab_file ,test_img_csv = 'KamitaniData/imageID_test.csv',train_img_csv = 'KamitaniData/imageID_training.csv',voxel_spacing =3,log = 0 ):
         mat = loadmat(matlab_file)
         self.data = mat['dataSet'][:,3:]
         self.sample_meta = mat['dataSet'][:,:3]

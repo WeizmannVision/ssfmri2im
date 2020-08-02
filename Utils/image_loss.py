@@ -11,13 +11,13 @@ from keras import backend as K
 from keras.optimizers import SGD,Adam
 import numpy as np
 from keras.layers import Lambda
-
+import config_file
 
 
 MEAN_PIXELS = [123.68, 116.779, 103.939]
 
 class image_loss():
-    def __init__(self,img_len = 112 ,vgg_in=True,include_top = False ,normlize = True,train_imgs = None):
+    def __init__(self,img_len = config_file.image_size ,vgg_in=True,include_top = False ,normlize = True,train_imgs = None):
         self.layer_embed = {}
         self.norm_factor = {}
         self.include_top = include_top

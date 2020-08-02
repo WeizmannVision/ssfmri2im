@@ -68,7 +68,7 @@ def combined_loss(y_true, y_pred):
 
 initial_lrate = 0.001
 epochs_drop =  30.0
-RESOLUTION = 112
+RESOLUTION = config_file.image_size
 epochs = int(epochs_drop*5)
 examples = 16
 include_decenc= 1

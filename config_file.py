@@ -21,10 +21,14 @@ decoder_weights = None
 
 encoder_tenosrboard_logs = None
 decoder_tenosrboard_logs = None
+
+
 #####################  pretrained mat conv net weights (alexnet)  ######################################
 
 DOWNLOAD_LINK = 'http://www.vlfeat.org/matconvnet/models/imagenet-caffe-ref.mat'
 FILENAME = 'imagenet-caffe-ref.mat'
 EXPECTED_BYTES = 228031200
 
+##################### PARAMS ######################################
 
+image_size = 112

@@ -15,7 +15,7 @@ import config_file
 class encoder_param():
     def __init__(self,num_voxels):
         self.num_voxels = num_voxels
-        self.resolution = 112
+        self.resolution = config_file.image_size
         self.conv_l1_reg = 1e-5
         self.conv_l2_reg = 0.001
         self.fc_reg_l1 = 10
